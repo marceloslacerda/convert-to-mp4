@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Encoding=UTF-8
+Exec=/hdd/workspace/convert-to-mp4/convert-to-mp4
+Icon=camera-video-symbolic
+StartupNotify=false
+Categories=X-XFCE;X-Xfce-Toplevel;
+OnlyShowIn=XFCE;
+Name=Convert webm to mp4
+Comment=Command that converts a webm video to mp4
