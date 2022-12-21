@@ -1,0 +1,19 @@
+#!/usr/bin/env python3
+
+import subprocess
+import shlex
+import pathlib
+
+
+def main():
+    fpath = subprocess.check_output(shlex.split("zenity --file-selection --title 'webm -> mp4 converter' --file-filter '*.webm'"), encoding='utf-8')
+    outpath = pathlib.Path("/tmp/convert-to-mp4/")
+    outpath.mkdir(exist_ok=True)
+    outpath_file = outpath / pathlib.Path(fpath).with_suffix(".mp4").name
+    subprocess.check_call(shlex.split(f"ffmpeg -i {fpath} {outpath_file}"))
+    subprocess.check_call(shlex.split(f"zenity --info --text 'Success! File name: {outpath_file}'"))
+
+
+if __name__ == '__main__':
+    main()
+
